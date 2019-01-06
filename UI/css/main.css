@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+}
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    /* justify-content: space-between; */
+}
+
+a{
+    padding: 10px;
+    
+}
+
+nav ul{
+    padding-left: 20px;
+}
+
+.new-meetup{
+    display: flex;
+    justify-content: flex-end;   
+}
+
+.intro{
+    display: flex;
+    justify-content: center;
+}
+
+.center-intro{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.how-it-works{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    /* align-items: center; */
+}
+.insights{
+    text-align: center;
+}
+
+
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
