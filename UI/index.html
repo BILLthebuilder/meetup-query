@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="header" style="border:1px solid black;">
+    <div class="header" >
         <header>
             <div class="logo">
                 <a href="index.html">
@@ -31,20 +31,22 @@
             </nav>
         </header>
     </div>
-    <div class="intro">
-        <video autoplay loop>
-            <source src="assets/video/welcome-video.mp4" type="video/mp4">
-
-        </video>
-        <p>
-            Need a community?
-            <br>
-            Find reviews on meetup-query
-        </p>
-        <button>
-            <a href="signup.html"> Sign up</a>
-        </button>
-    </div>
+        <div class="intro">
+            <video autoplay loop>
+                <source src="assets/video/welcome-video.mp4" type="video/mp4">
+            </video>
+            <div class="center-intro">
+                    <p>
+                    Need a community?
+                    <br>
+                    Find reviews on meetup-query
+                    </p>
+                    <button>
+                        <a href="signup.html"> Sign up</a>
+                    </button>
+            </div>
+        </div>
+        
     <section class="meetups-list">
         <h2>
             Popular Meetups nearby
@@ -57,7 +59,7 @@
         </div>  
     </section>
     <section class="how-site-works">
-        <h2>
+        <h2 class="insights">
             How meetup-query works
         </h2>
         <div class="how-it-works">
@@ -89,7 +91,7 @@
             </div>
         </div>
     </section>
-    <footer style="border:1px solid black;">
+    <footer >
         <div class="copyright">
             <p>
                 &copy; 2019 meetup-query
