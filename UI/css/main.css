@@ -21,9 +21,10 @@ nav ul{
     justify-content: flex-end;   
 }
 
-.intro{
-    display: flex;
-    justify-content: center;
+video{
+    width: 1800px;
+    height: 400px;
+    object-fit: fill;
 }
 
 .center-intro{
