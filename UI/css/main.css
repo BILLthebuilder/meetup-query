@@ -3,13 +3,18 @@
 }
 nav ul{
     display: flex;
+    flex-flow: row wrap;
     justify-content: flex-end;
     /* justify-content: space-between; */
 }
 
 a{
     padding: 10px;
+    text-decoration-line: none;
     
+}
+ul{
+    list-style-type: none;
 }
 
 nav ul{
@@ -37,9 +42,11 @@ video{
 
 .how-it-works{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     justify-content: space-evenly;
     /* align-items: center; */
+    margin: 15px;
 }
 .insights{
     text-align: center;
