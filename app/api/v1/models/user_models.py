@@ -23,6 +23,6 @@ class UserModel(object):
             payload = jwt.decode(auth_token, os.getenv('SECRET_KEY'))
             return payload['sub']
         except jwt.ExpiredSignatureError:
-            return 'Token exppired, login again'
+            return 'Token expired, please login again'
         except jwt.InvalidTokenError:
-            return 'Invalid token, login'
+            return 'Invalid token, please login'
