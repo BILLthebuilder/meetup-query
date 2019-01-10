@@ -18,4 +18,8 @@ def create_question():
             "message": "Wrong input"
         })), 400
 
-    
+    title = data.get('title')
+    body = data.get('body')
+    meetup = data.get('meetup')
+    createdby = data.get('createdby')
+    votes = data.get('votes')
