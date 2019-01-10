@@ -26,3 +26,20 @@ class UserModel(object):
             return 'Token expired, please login again'
         except jwt.InvalidTokenError:
             return 'Invalid token, please login'
+
+    def signup(self, firstname, lastname, othername, email, phoneNumber, username, isAdmin, password):
+        """ Method to add new users """
+
+        registered = datetime.now()
+        user = {
+            "id": len(self.users) + 1,
+            "firstname": firstname,
+            "lastname": lastname,
+            "othername": othername,
+            "email": email,
+            "phoneNumber": phoneNumber,
+            "username": username,
+            "registered": registered,
+            "isAdmin": isAdmin,
+            "password": password
+        }
