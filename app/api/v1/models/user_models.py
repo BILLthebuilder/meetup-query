@@ -16,3 +16,13 @@ class UserModel(object):
             return jwt.encode(payload, os.getenv('SECRET_KEY', 'my_secret'), algorithm='HS256').decode('utf-8')
         except Exception as e:
             return e
+
+    def verify_auth_token(self, auth_token):
+        """Method to verify auth token """
+        try:
+            payload = jwt.decode(auth_token, os.getenv('SECRET_KEY'))
+            return payload['sub']
+        except jwt.ExpiredSignatureError:
+            return 'Token exppired, login again'
+        except jwt.InvalidTokenError:
+            return 'Invalid token, login'
