@@ -53,7 +53,7 @@ Say what the step will be
 * Run `pytest --cov=app`
 
 ## Deployment
-* The API is deployed [here](https://heroku.com) on heroku
+* The API is deployed [here](https://meetup-query-api.herokuapp.com/) on heroku
 
 ## Built With
 * [Flask](http://flask.pocoo.org) - The web framework used
