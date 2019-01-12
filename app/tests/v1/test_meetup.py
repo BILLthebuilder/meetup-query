@@ -35,3 +35,11 @@ class TestMeetups(unittest.TestCase):
         result = json.loads(response.data)
         self.assertEqual(result["message"],"All fields must be populated with data")
         self.assertEqual(response.status_code, 400)
+
+    # Test successful meetup creation
+    def test_post_meetup_success(self):
+        response = self.client.post('api/v1/meetups', data=json.dumps(self.meetup_complete),
+        content_type="application/json")
+        result = json.loads(response.data)
+        self.assertEqual(result["message"],"Meetup created successfully")
+        self.assertEqual(response.status_code, 201)
