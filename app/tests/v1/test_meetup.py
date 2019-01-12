@@ -41,5 +41,5 @@ class TestMeetups(unittest.TestCase):
         response = self.client.post('api/v1/meetups', data=json.dumps(self.meetup_complete),
         content_type="application/json")
         result = json.loads(response.data)
-        self.assertEqual(result["message"],"Meetup created successfully")
+        self.assertEqual(result["message"],"Meetup created succesfully")
         self.assertEqual(response.status_code, 200)
