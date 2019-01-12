@@ -11,9 +11,9 @@ class TestMeetups(unittest.TestCase):
         self.app = create_app("testing")
         self.client = self.app.test_client()
 
-    self.meetup_incomplete ={
-            "topic" : "Programming"
-        }
+        self.meetup_incomplete ={
+                "topic" : "Programming"
+            }
         self.meetup_complete ={
             "id": "1",
             "topic" : "Udacity welcom",
@@ -26,4 +26,12 @@ class TestMeetups(unittest.TestCase):
         response = self.client.post('api/v1/meetups')
         result = json.loads(response.data)
         self.assertEqual(result["message"],"Only Application/JSON input expected")
+        self.assertEqual(response.status_code, 400)
+
+     # Test empty fields
+    def test_post_empty_meetup(self):
+        response = self.client.post('api/v1/meetups',data=json.dumps(self.meetup_incomplete),
+        content_type="application/json")
+        result = json.loads(response.data)
+        self.assertEqual(result["message"],"All fields must be populated with data")
         self.assertEqual(response.status_code, 400)
