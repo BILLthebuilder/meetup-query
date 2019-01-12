@@ -11,18 +11,19 @@ class TestMeetups(unittest.TestCase):
         self.app = create_app("testing")
         self.client = self.app.test_client()
 
-    def create_record(self):
-        response = self.client.post('/api/v1/meetups', \
-            data=json.dumps({
-                "Title": "Udacity",
-                "Description": "A meetup for udacity Alumni will be this Tuesday",
-                "Date" : "Tuesday Next week",
-                "Location" : "San Fransisco or remote via zoom"
-                }),\
-            headers={"content-type": "application/json"})
-        return response
+    self.meetup_incomplete ={
+            "topic" : "Programming"
+        }
+        self.meetup_complete ={
+            "id": "1",
+            "topic" : "Udacity welcom",
+            "location" : "San Fransisco or remotely via zoom",
+            "happeningOn" : "Tommorow"
+        }
 
-    #Test the creation of a meetup
-    def test_01_post(self):
-        response = self.create_record()
-        self.assertEqual(response.status_code, 201)
+    # Test validity of json data in request
+    def test_post_meetup(self):
+        response = self.client.post('api/v1/meetups')
+        result = json.loads(response.data)
+        self.assertEqual(result["message"],"Only Application/JSON input expected")
+        self.assertEqual(response.status_code, 400)
