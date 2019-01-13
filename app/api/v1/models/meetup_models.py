@@ -1,8 +1,8 @@
-from datetime import datetime
+import datetime
 
 MEETUPS = []
 
-class MeetUpRecord(object):
+class MeetupRecord():
     """ Mapping meetup and data relations """
 
     def __init__(self):
@@ -19,7 +19,7 @@ class MeetUpRecord(object):
             }
 
         self.meetup_records.append(data)
-        return data
+        return self.meetup_records
 
     def view_meetups(self):
         if len(self.meetup_records) == 0:
