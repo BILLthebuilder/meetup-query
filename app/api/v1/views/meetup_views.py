@@ -16,3 +16,8 @@ class Meetup(MeetupData, Resource):
         location = data['Location']
         resp = self.records.save(title, description, date, location)
         return make_response(jsonify({"The Meetup is": resp}), 201)
+
+    def get(self):
+        """ The endpoint for getting all the meetup records """
+        data = self.records.view_meetups()
+        return make_response(jsonify({"All the meetups available are": data}), 200)

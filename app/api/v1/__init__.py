@@ -7,4 +7,5 @@ api = Api(version_one)
 
 from .views.meetup_views import Meetup
 
-api.add_resource(Meetup, '/meetups') #route to create a meetup record
+api.add_resource(Meetup, '/meetups') #route for POST and GET for meetup records
+
