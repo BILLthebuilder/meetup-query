@@ -67,7 +67,13 @@ class TestMeetups(unittest.TestCase):
             headers={"content-type": "application/json"})
         return response
 
-    ###Test meetups creation
+    #Test meetups creation
     def test_01_post(self):
         response = self.create_record()
         self.assertEqual(response.status_code, 201)
+
+    #Test for fetching all meetup records
+    def test_02_get(self):
+        response = self.client.get('/api/v1/meetups', 
+        headers={"content-type": "application/json"})
+        self.assertEqual(response.status_code, 200)
