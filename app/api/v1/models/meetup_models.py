@@ -2,7 +2,7 @@ import datetime
 
 MEETUPS = []
 
-class MeetupRecord():
+class MeetupData():
     """ Mapping meetup and data relations """
 
     def __init__(self):
