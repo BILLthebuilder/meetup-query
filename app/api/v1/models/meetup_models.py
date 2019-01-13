@@ -1,65 +1,37 @@
-from datetime import datetime, timedelta
+import datetime
 
 MEETUPS = []
 
-class MeetUpModel(object):
+class MeetupData():
     """ Mapping meetup and data relations """
 
     def __init__(self):
-        self.meetups = MEETUPS
+        self.meetup_records = MEETUPS
 
-    def create_meetup(self, topic, location, images, happeningOn, tags):
-        """ A constructor method for the meetups """
+    def save(self, title, description, date, location):
+        data = {
+            "createdOn" : datetime.datetime.now(),
+            "id" : len(self.meetup_records)+1,
+            "Title": title,
+            "Description": description,
+            "Date" : date,
+            "Location" : location
+            }
 
-        createdOn = datetime.now()
-        meetup = {
-            "id": len(self.meetups) + 1,
-            "topic": topic,
-            "location": location,
-            "createdOn": createdOn,
-            "happeningOn": happeningOn,
-            "images": images,
-            "tags": tags,
-        }
-
-        self.meetups.append(meetup)
-        return meetup
+        self.meetup_records.append(data)
+        return self.meetup_records
 
     def view_meetups(self):
-        if len(self.meetups) == 0:
+        if len(self.meetup_records) == 0:
             return ({
-                "message": "There are no meetups"
+                "message": "There are no meetup_records"
             })
-        return self.meetups
+        return self.meetup_records
 
     def view_one_meetup(self, id):
         """ A method to view one meetup """
-        return [meetup for meetup in MEETUPS if meetup["id"] == id]
-        
-
-# import json
-
-# meetups = []
-
-# class Meetups:
-#     """The class for the meetups"""
-#     def __init__(self, meetupid, createdOn, createdBy, location, topic, happeningOn, tags):
-#         """The meetup constructor"""
-#         self.meetupid = len(meetups)+1
-#         self.createdOn = createdOn
-#         self.createdBy = createdBy
-#         self.location = location
-#         self.topic = topic
-#         self.tags = tags
-#         self.happeningOn = happeningOn
-
-#     def create_meetup(self):
-#         the_meetup = {
-#             "topic":self.topic,
-#             "location":self.location,
-#             "happeningOn":self.happeningOn,
-#             "tags":self.tags
-#         }
-
-#         self.meetups.append(the_meetup)
-#         return meetup
+        item = None
+        for record in self.meetup_records:
+            if record['id'] == id:
+                item = record
+        return item
