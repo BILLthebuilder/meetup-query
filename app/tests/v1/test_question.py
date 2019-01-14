@@ -18,7 +18,7 @@ class TestQuestions(unittest.TestCase):
             headers={"content-type": "application/json"})
         return response
 
-    #Test questions creation
+    ###Test for creation of questions
     def test_01_post_questions(self):
         response = self.create_record()
         self.assertEqual(response.status_code, 201)
