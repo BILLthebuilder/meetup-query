@@ -3,7 +3,7 @@ import datetime
 RESERVATIONS = []
 
 
-class QuestionsModel():
+class RsvpModel():
     """ Mapping reservations and data relations """
 
     def __init__(self):
