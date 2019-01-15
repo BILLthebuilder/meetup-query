@@ -17,7 +17,7 @@ What things you need to install the software and how to install them
 A step by step series of examples that tell you how to get a development env running
 Say what the step will be
 * Clone the project repository
-`git clone git@github.com:BILLthebuilder/meetup-query.git`
+`git clone https://github.com/BILLthebuilder/meetup-query.git`
 
 * Change the directory
 `cd meetup-query`
@@ -39,15 +39,15 @@ Say what the step will be
       flask run
     ```
 ### The API Endpoints
-| HTTP Verb  	|Endpoint   	|Function   	|
+| HTTP Verb  	|Endpoint   	|Function   	|Currently working  |
 |---	|---	|---	|
-| POST  	|`/api/v1/meetups`   	|Create a Meetup record   	|
-| GET  	|`/api/v1/<meetup-id`   	|Fetch a Specific Meetup record   	|
-| GET  	|`/api/v1/meetups/upcoming`   	|Fetch all upcoming meetup records   	|
-| POST  	|`/api/v1/questions`   	|Create a question for a specific Meetup    	|
-| POST  	|`/api/v1/meetups/<meetup-id/rsvps`   	|Respond to meetup RSVP   	|
-| PATCH  	|`/api/v1/questions/<question-id>/upvote`   	|Upvote(increase votes by 1) a specific question   	|
-| PATCH  	| `/api/v1/questions/<question-id>/downvote`  	|downvote(decrease votes by 1) a specific question    	|
+| POST  	|`/api/v1/meetups`   	|Create a Meetup record   	|Yes    |
+| GET  	|`/api/v1/meetups/<int:id>`   	|Fetch a Specific Meetup record   	|Yes    |
+| GET  	|`/api/v1/meetups`   	|Fetch all meetup records   	|Yes    |
+| POST  	|`/api/v1/questions`   	|Create a question for a specific Meetup    	|Yes    |   
+| POST  	|`/api/v1/meetups/<int:id>/rsvps`   	|Respond to meetup RSVP   	|Yes    |
+| PATCH  	|`/api/v1/questions/<question-id>/upvote`   	|Upvote(increase votes by 1) a specific question   	|No |
+| PATCH  	| `/api/v1/questions/<question-id>/downvote`  	|downvote(decrease votes by 1) a specific question    	|No |
 
 ## Running the tests
 * Run `pytest --cov=app`
@@ -73,5 +73,6 @@ Please read this [code of conduct](http://bit.ly/honor-code2018) for details on 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-* _NBO-36 TEAM3_
+* _NBO-36 TEAM3_(Pre-bootcamp)
+* _the-marines-nbo_
 * Hat tip to anyone whose code was used
