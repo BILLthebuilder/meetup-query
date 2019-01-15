@@ -12,7 +12,7 @@ class TestQuestions(unittest.TestCase):
     def create_record(self):
         response = self.client.post('/api/v1/questions', 
             data=json.dumps({
-                "Title": "Javascript",
+                "title": "Javascript",
                 "question" : "How do you write Promises?"
                 }),
             headers={"content-type": "application/json"})
