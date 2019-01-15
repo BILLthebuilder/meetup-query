@@ -1,7 +1,7 @@
 from .views.rsvp_views import Reservations
 from .views.question_views import Question
 from .views.meetup_views import Meetup, Meetups
-
+from .views.vote_views import Upvote
 from flask_restful import Api
 from flask import Blueprint
 
