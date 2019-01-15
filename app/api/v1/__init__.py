@@ -15,3 +15,5 @@ api.add_resource(Meetup, '/meetups')
 api.add_resource(Meetups, '/meetups/<int:id>')
 # route for POST question
 api.add_resource(Question, '/questions')
+# route to POST a reservation to a meetup
+api.add_resource(Reservations, '/meetups/<int:id>/rsvp')
