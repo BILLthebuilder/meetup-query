@@ -9,13 +9,13 @@ class RsvpModel():
     def __init__(self):
         self.reservations = RESERVATIONS
 
-    def save(self, topic, status):
+    def save(self, id, topic, status):
         """ The reservations db """
 
         reserves = {
             "topic": topic,
             "createdOn": datetime.datetime.now(),
-            "id": len(self.reservations) + 1,
+            "id": id,
             "status": status
         }
 
