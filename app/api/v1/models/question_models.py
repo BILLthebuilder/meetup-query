@@ -8,11 +8,11 @@ class QuestionsModel():
     def __init__(self):
         self.questions = QUESTIONS
 
-    def save(self, question):
+    def save(self, question, title):
         """ The questions db """
 
         q_data = {
-            
+            "title" : title,
             "createdOn": datetime.datetime.now(),
             "id" : len(self.questions) + 1,
             "question" : question
