@@ -21,18 +21,18 @@ class Votes():
 
         # Checking for upvotes
         if vote:
-            data['upvotes'] = data['upvotes'] + 1
+            data['upvotes'] += 1
 
         # Checking for downvotes
         else:
-            data['downvotes'] = data['downvotes'] + 1
+            data['downvotes'] += 1
         self.vote_records.append(data)
         return self.vote_records
 
     def vote(self, id, vote):
         record = self.find_vote(id)
         if record is not None:
-            record['upvotes'] = record['upvotes'] + 1
+            record['upvotes'] += 1
             return record
         else:
             response = self.save(id, vote)
