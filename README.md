@@ -39,15 +39,15 @@ Say what the step will be
       flask run
     ```
 ### The API Endpoints
-| HTTP Verb  	|Endpoint   	|Function   	|Currently working  |
+| Request  	|Endpoint   	|Function   	 
 |---	|---	|---	|
-| POST  	|`/api/v1/meetups`   	|Create a Meetup record   	|Yes    |
-| GET  	|`/api/v1/meetups/<int:id>`   	|Fetch a Specific Meetup record   	|Yes    |
-| GET  	|`/api/v1/meetups`   	|Fetch all meetup records   	|Yes    |
-| POST  	|`/api/v1/questions`   	|Create a question for a specific Meetup    	|Yes    |   
-| POST  	|`/api/v1/meetups/<int:id>/rsvps`   	|Respond to meetup RSVP   	|Yes    |
-| PATCH  	|`/api/v1/questions/<question-id>/upvote`   	|Upvote(increase votes by 1) a specific question   	|No |
-| PATCH  	| `/api/v1/questions/<question-id>/downvote`  	|downvote(decrease votes by 1) a specific question    	|No |
+| POST  	|`/api/v1/meetups`   	|Create a Meetup record (complete)  	  
+| GET  	|`/api/v1/meetups/<int:id>`   	|Fetch a Specific Meetup record (complete)  	  
+| GET  	|`/api/v1/meetups`   	|Fetch all meetup records (complete)   	   
+| POST  	|`/api/v1/questions`   	|Create a question for a specific Meetup (complete)    	     
+| POST  	|`/api/v1/meetups/<int:id>/rsvps`   	|Respond to meetup RSVP (complete)   	   
+| PATCH  	|`/api/v1/questions/<int:id>/upvote`   	|Upvote(increase votes by 1) a specific question (in progress)   	
+| PATCH  	| `/api/v1/questions/<int:id>/downvote`  	|downvote(decrease votes by 1) a specific question (in progress)  	
 
 ## Running the tests
 * Run `pytest --cov=app`
@@ -66,7 +66,7 @@ Please read this [code of conduct](http://bit.ly/honor-code2018) for details on 
 
 ## Authors
  **Bill Kariri** 
-*  Initial work* 
+*  Initial work 
 *  [Bill Kariri](https://github.com/BILLthebuilder)
 
 ## License
@@ -74,5 +74,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 * _NBO-36 TEAM3_(Pre-bootcamp)
-* _the-marines-nbo_
+* _the-marines-nbo_(Bootcamp)
 * Hat tip to anyone whose code was used
