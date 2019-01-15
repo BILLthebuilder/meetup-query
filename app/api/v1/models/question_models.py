@@ -1,26 +1,22 @@
-from datetime import datetime, timedelta
+import datetime
 
 QUESTIONS = []
 
-class QuestionModel(object):
+class QuestionsModel():
     """ Mapping question and data relations """
 
     def __init__(self):
         self.questions = QUESTIONS
 
-    def create_question(self, title, body, meetup, createdby, votes):
-        """ A constructor method for the questions """
+    def save(self, question):
+        """ The questions db """
 
-        createdOn = datetime.now()
-        meetup = {
-            "id": len(self.questions) + 1,
-            "title": title,
-            "body": body,
-            "meetup": meetup,
-            "createdby": createdby,
-            "createdon": createdOn,
-            "votes": votes
+        q_data = {
+            
+            "createdOn": datetime.datetime.now(),
+            "id" : len(self.questions) + 1,
+            "question" : question
         }
 
-        self.questions.append(meetup)
-        return meetup
+        self.questions.append(q_data)
+        return self.questions
