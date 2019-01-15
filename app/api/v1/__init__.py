@@ -1,6 +1,7 @@
 from .views.rsvp_views import Reservations
 from .views.question_views import Question
 from .views.meetup_views import Meetup, Meetups
+
 from flask_restful import Api
 from flask import Blueprint
 
@@ -17,3 +18,5 @@ api.add_resource(Meetups, '/meetups/<int:id>')
 api.add_resource(Question, '/questions')
 # route to POST a reservation to a meetup
 api.add_resource(Reservations, '/meetups/<int:id>/rsvp')
+# route to upvote a question: PATCH
+api.add_resource(Upvote, '/questions/<int:id>/upvote')
