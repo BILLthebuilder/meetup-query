@@ -10,9 +10,12 @@ class Question(QuestionsModel, Resource):
     def post(self):
         """ The endpoint for posting a question """
         data = request.get_json()
+        title = data['title']
         question = data['question']
-        resp = self.questions_records.save(question)
+        resp = self.questions_records.save(question, title)
         
         if resp is not None:
-            return make_response(jsonify({"The Questions are": resp}), 201)
+            return make_response(jsonify({
+                "status": 201,
+                "The Questions are": resp}), 201)
         return make_response(jsonify({"Error": "Question could not be posted"}), 500)
