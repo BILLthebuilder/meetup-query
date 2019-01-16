@@ -1,7 +1,7 @@
 from .views.rsvp_views import Reservations
 from .views.question_views import Question
 from .views.meetup_views import Meetup, Meetups
-from .views.vote_views import Upvote
+from .views.vote_views import Upvote, Downvote
 from flask_restful import Api
 from flask import Blueprint
 
@@ -20,3 +20,5 @@ api.add_resource(Question, '/questions')
 api.add_resource(Reservations, '/meetups/<int:id>/rsvp')
 # route to upvote a question: PATCH
 api.add_resource(Upvote, '/questions/<int:id>/upvote')
+# route to downvote a question: PATCH
+api.add_resource(Downvote, '/questions/<int:id>/downvote')
