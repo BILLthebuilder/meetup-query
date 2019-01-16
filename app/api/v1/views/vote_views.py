@@ -23,5 +23,5 @@ class Downvote(Upvote, Votes, Resource):
         response = self.vote_records.vote(id, False)
         return make_response(jsonify({
             "Status": 201,
-            "The downvoted questions are": response
+            "My downvoted vote records are": response
         }), 201)
