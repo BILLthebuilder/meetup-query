@@ -9,4 +9,19 @@ class Upvote(Votes, Resource):
 
     def patch(self, id):
         response = self.vote_records.vote(id, True)
-        return make_response(jsonify({"My upvoted votes records are": response}), 201)
+        return make_response(jsonify({
+            "Status": 201,
+            "My upvoted votes records are": response
+        }), 201)
+
+
+class Downvote(Upvote, Votes, Resource):
+    def __init__(self):
+        super(Downvote, self).__init__()
+
+    def patch(self, id):
+        response = self.vote_records.vote(id, False)
+        return make_response(jsonify({
+            "Status": 201,
+            "The downvoted questions are": response
+        }), 201)
