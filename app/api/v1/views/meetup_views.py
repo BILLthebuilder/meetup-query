@@ -46,5 +46,4 @@ class Meetups(MeetupData, Resource):
 
             return make_response(jsonify({
                 "status": 404,
-                "message": "Sorry that Meetup was not found"}), 404)
-            return make_response(jsonify({"Message": "Sorry that Meetup was not found"}), 404)
+                "message": "sorry that meetup was not found"}), 404)

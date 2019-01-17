@@ -23,5 +23,5 @@ class Reservations(RsvpModel, Resource):
             }), 201)
         return make_response(jsonify({
             "status": 500,
-            "Error": "Unable to book reservation"
+            "error": "unable to book reservation"
         }), 500)

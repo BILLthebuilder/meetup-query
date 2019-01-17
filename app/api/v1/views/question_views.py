@@ -23,7 +23,5 @@ class Question(QuestionsModel, Resource):
 
         return make_response(jsonify({
             "status": 500,
-            "error": "Question could not be posted"
+            "error": "question could not be posted"
         }), 500)
-
-        return make_response(jsonify({"Error": "Question could not be posted"}), 500)
