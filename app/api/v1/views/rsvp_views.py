@@ -18,10 +18,10 @@ class Reservations(RsvpModel, Resource):
 
         if resp is not None:
             return make_response(jsonify({
-                "Status": 201,
+                "status": 201,
                 "Here is your reservation":
                 resp}), 201)
         return make_response(jsonify({
-            "Status": 500,
+            "status": 500,
             "Error": "Unable to book reservation"
         }), 500)
