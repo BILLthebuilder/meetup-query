@@ -2,6 +2,7 @@ import datetime
 
 QUESTIONS = []
 
+
 class QuestionsModel():
     """ Mapping question and data relations """
 
@@ -12,10 +13,10 @@ class QuestionsModel():
         """ The questions db """
 
         q_data = {
-            "title" : title,
+            "title": title,
             "createdOn": datetime.datetime.now(),
-            "id" : len(self.questions) + 1,
-            "question" : question
+            "id": len(self.questions) + 1,
+            "question": question
         }
 
         self.questions.append(q_data)

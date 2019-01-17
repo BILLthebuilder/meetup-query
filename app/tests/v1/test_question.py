@@ -3,6 +3,7 @@ import json
 
 from app import create_app
 
+
 class TestQuestions(unittest.TestCase):
 
     def setUp(self):
@@ -10,15 +11,15 @@ class TestQuestions(unittest.TestCase):
         self.client = self.app.test_client()
 
     def create_record(self):
-        response = self.client.post('/api/v1/questions', 
-            data=json.dumps({
-                "title": "Javascript",
-                "question" : "How do you write Promises?"
-                }),
-            headers={"content-type": "application/json"})
+        response = self.client.post('/api/v1/questions',
+                                    data=json.dumps({
+                                        "title": "Javascript",
+                                        "question": "How do you write Promises?"
+                                    }),
+                                    headers={"content-type": "application/json"})
         return response
 
-    ###Test for creation of questions
+    # Test for creation of questions
     def test_01_post_questions(self):
         response = self.create_record()
         self.assertEqual(response.status_code, 201)

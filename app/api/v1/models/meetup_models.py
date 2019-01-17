@@ -2,6 +2,7 @@ import datetime
 
 MEETUPS = []
 
+
 class MeetupData():
     """ Mapping meetup and data relations """
 
@@ -10,13 +11,13 @@ class MeetupData():
 
     def save(self, title, description, date, location):
         data = {
-            "createdOn" : datetime.datetime.now(),
-            "id" : len(self.meetup_records)+1,
+            "createdOn": datetime.datetime.now(),
+            "id": len(self.meetup_records)+1,
             "Title": title,
             "Description": description,
-            "Date" : date,
-            "Location" : location
-            }
+            "Date": date,
+            "Location": location
+        }
 
         self.meetup_records.append(data)
         return self.meetup_records

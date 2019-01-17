@@ -50,6 +50,7 @@ import json
 
 from app import create_app
 
+
 class TestMeetups(unittest.TestCase):
 
     def setUp(self):
@@ -57,32 +58,31 @@ class TestMeetups(unittest.TestCase):
         self.client = self.app.test_client()
 
     def create_record(self):
-        response = self.client.post('/api/v1/meetups', 
-            data=json.dumps({
-                "Title": "Football",
-                "Description": "Playing football on 25th",
-                "Date" : "25th of November",
-                "Location" : "Kasarani"
-                }),
-            headers={"content-type": "application/json"})
+        response = self.client.post('/api/v1/meetups',
+                                    data=json.dumps({
+                                        "Title": "Football",
+                                        "Description": "Playing football on 25th",
+                                        "Date": "25th of November",
+                                        "Location": "Kasarani"
+                                    }),
+                                    headers={"content-type": "application/json"})
         return response
 
-    #Test meetups creation
+    # Test meetups creation
     def test_01_post_meetups(self):
         response = self.create_record()
         self.assertEqual(response.status_code, 201)
 
-    #Test for fetching all meetup records
+    # Test for fetching all meetup records
     def test_02_get_all(self):
-        response = self.client.get('/api/v1/meetups', 
-        headers={"content-type": "application/json"})
+        response = self.client.get('/api/v1/meetups',
+                                   headers={"content-type": "application/json"})
         self.assertEqual(response.status_code, 200)
 
-    #Test for getting a specific meetup record
+    # Test for getting a specific meetup record
     def test_03_get_specific(self):
         self.create_record()
         response = self.client.get('/api/v1/meetups/1',
-        headers={"content-type": "application/json"})
+                                   headers={"content-type": "application/json"})
         self.assertEqual(response.status_code, 200)
         self.assertNotEqual(response.status_code, 404)
-        
