@@ -19,11 +19,11 @@ class Question(QuestionsModel, Resource):
         if resp is not None:
             return make_response(jsonify({
                 "status": 201,
-                "The Questions are": resp}), 201)
+                "data": resp}), 201)
 
         return make_response(jsonify({
             "status": 500,
-            "Error": "Question could not be posted"
+            "error": "Question could not be posted"
         }), 500)
 
         return make_response(jsonify({"Error": "Question could not be posted"}), 500)
