@@ -13,10 +13,10 @@ class MeetupData():
         data = {
             "createdOn": datetime.datetime.now(),
             "id": len(self.meetup_records)+1,
-            "Title": title,
-            "Description": description,
-            "Date": date,
-            "Location": location
+            "title": title,
+            "description": description,
+            "date": date,
+            "location": location
         }
 
         self.meetup_records.append(data)
