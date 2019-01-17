@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/BILLthebuilder/meetup-query.svg?branch=develop)](https://travis-ci.org/BILLthebuilder/meetup-query)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/23dc6c0874104fca8473fd8d59ea2067)](https://www.codacy.com/app/BILLthebuilder/meetup-query?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BILLthebuilder/meetup-query&amp;utm_campaign=Badge_Grade)
+[![codecov](https://codecov.io/gh/BILLthebuilder/meetup-query/branch/develop/graph/badge.svg)](https://codecov.io/gh/BILLthebuilder/meetup-query)
 [![Coverage Status](https://coveralls.io/repos/github/BILLthebuilder/meetup-query/badge.svg?branch=develop)](https://coveralls.io/github/BILLthebuilder/meetup-query?branch=develop)
 [![Maintainability](https://api.codeclimate.com/v1/badges/fbc43151aa7a1cb8a6a0/maintainability)](https://codeclimate.com/github/BILLthebuilder/meetup-query/maintainability)
 
