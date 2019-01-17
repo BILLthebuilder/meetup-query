@@ -20,7 +20,7 @@ class MeetupData():
         }
 
         self.meetup_records.append(data)
-        return self.meetup_records
+        return data
 
     def view_meetups(self):
         if len(self.meetup_records) == 0:
