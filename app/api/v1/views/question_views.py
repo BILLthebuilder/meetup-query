@@ -2,8 +2,10 @@ from flask import jsonify, make_response, request
 from flask_restful import Resource
 from ..models.question_models import QuestionsModel
 
+
 class Question(QuestionsModel, Resource):
     """ Posting the question """
+
     def __init__(self):
         self.questions_records = QuestionsModel()
 
@@ -13,9 +15,12 @@ class Question(QuestionsModel, Resource):
         title = data['title']
         question = data['question']
         resp = self.questions_records.save(question, title)
-        
+
         if resp is not None:
             return make_response(jsonify({
-                "status": 201,
+                "Status": 201,
                 "The Questions are": resp}), 201)
-        return make_response(jsonify({"Error": "Question could not be posted"}), 500)
+        return make_response(jsonify({
+            "Status": 500,
+            "Error": "Question could not be posted"
+        }), 500)
