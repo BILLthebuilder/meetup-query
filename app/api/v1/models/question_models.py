@@ -20,4 +20,4 @@ class QuestionsModel():
         }
 
         self.questions.append(q_data)
-        return self.questions
+        return q_data
