@@ -2,8 +2,10 @@ from flask import jsonify, make_response, request
 from flask_restful import Resource
 from ..models.meetup_models import MeetupData
 
+
 class Meetup(MeetupData, Resource):
     """ Endpoints for getting and posting all meetup records """
+
     def __init__(self):
         self.records = MeetupData()
 
@@ -22,6 +24,7 @@ class Meetup(MeetupData, Resource):
         data = self.records.view_meetups()
         return make_response(jsonify({"All the meetups available are": data}), 200)
 
+
 class Meetups(MeetupData, Resource):
     """Endpoints for getting specific meetups and updating meetup records"""
 
@@ -34,5 +37,4 @@ class Meetups(MeetupData, Resource):
         if data is not None:
             return make_response(jsonify({"The specific meetup you are looking for is": data}), 200)
         else:
-            return make_response(jsonify({"Message":"Sorry that Meetup was not found"}), 404)
-
+            return make_response(jsonify({"Message": "Sorry that Meetup was not found"}), 404)
