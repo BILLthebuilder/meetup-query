@@ -17,12 +17,17 @@ class Meetup(MeetupData, Resource):
         date = data['Date']
         location = data['Location']
         resp = self.records.save(title, description, date, location)
-        return make_response(jsonify({"The Meetup is": resp}), 201)
+        return make_response(jsonify({
+            "Status": 201,
+            "The Meetup is": resp}), 201)
 
     def get(self):
         """ The endpoint for getting all the meetup records """
         data = self.records.view_meetups()
-        return make_response(jsonify({"All the meetups available are": data}), 200)
+        return make_response(jsonify({
+            "Status": 200,
+            "All the meetups available are": data}), 200)
+
 
 
 class Meetups(MeetupData, Resource):
@@ -35,6 +40,13 @@ class Meetups(MeetupData, Resource):
         """The endpoint for getting a specific meetup record"""
         data = self.records.view_one_meetup(id)
         if data is not None:
-            return make_response(jsonify({"The specific meetup you are looking for is": data}), 200)
+            return make_response(jsonify({
+                "Status": 200,
+                "The specific meetup you are looking for is": data}), 200)
         else:
+
+            return make_response(jsonify({
+                "Status": 404,
+                "Message": "Sorry that Meetup was not found"}), 404)
             return make_response(jsonify({"Message": "Sorry that Meetup was not found"}), 404)
+
