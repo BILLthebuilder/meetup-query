@@ -60,10 +60,10 @@ class TestMeetups(unittest.TestCase):
     def create_record(self):
         response = self.client.post('/api/v1/meetups',
                                     data=json.dumps({
-                                        "Title": "Football",
-                                        "Description": "Playing football on 25th",
-                                        "Date": "25th of November",
-                                        "Location": "Kasarani"
+                                        "title": "Football",
+                                        "description": "Playing football on 25th",
+                                        "date": "25th of November",
+                                        "location": "Kasarani"
                                     }),
                                     headers={"content-type": "application/json"})
         return response
